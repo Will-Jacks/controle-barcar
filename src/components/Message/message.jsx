@@ -15,7 +15,7 @@ export default function ExibeMsg() {
 
     return (
         <div>
-            <h3>Mensagem recebida: {messages}</h3>
+            <h3>{messages}</h3>
         </div>
     )
 }

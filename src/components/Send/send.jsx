@@ -6,39 +6,29 @@ import styled from "styled-components";
 const ButtonsContainer = styled.div`
     margin-bottom:70px;
 `
+export function enviar(message) {
+    client.publish(topic, message);
+}
 
 export function SendMQTT() {
 
-    function enviar(message) {
-        client.publish(topic, message);
-    }
-
-    const [isButtonPressed, setIsButtonPressed] = useState(false);
+    
 
     const [ledStatus, setLedStatus] = useState('Liga led');
 
     const handleButtonPress = (message) => {
-        setIsButtonPressed(true);
-        console.log('Botão pressionado');
         enviar(message);
-        
     };
 
     const handleButtonRelease = (message) => {
-        setIsButtonPressed(false);
-        console.log('Botão solto');
         enviar(message);
     };
 
     const handleTouchStart = (message) => {
-        setIsButtonPressed(true);
-        handleButtonPress();
         enviar(message);
     };
 
     const handleTouchEnd = (message) => {
-        setIsButtonPressed(false);
-        handleButtonRelease();
         enviar(message);
     };
 
