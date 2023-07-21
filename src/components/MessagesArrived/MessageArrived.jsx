@@ -4,7 +4,7 @@ import React from 'react';
 
 import { client } from '../Connector/Connector';
 
-export default function Message() {
+export const MessageArrived= ()=> {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
