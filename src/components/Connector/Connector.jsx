@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 export const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt');
 export const topic = 'CARRINHO/barco';
 
-export default function Connector() {
+export const Connector = ()=> {
   const [connectionStatus, setConnectionStatus] = React.useState(false);
   
   useEffect(() => {

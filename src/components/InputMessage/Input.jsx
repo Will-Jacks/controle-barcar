@@ -21,7 +21,7 @@ const ButtonInput = styled(ButtonsMQTT)`
     height:50px;
 `
 
-export default function InputMessage() {
+export const InputMessage = ()=> {
 
     const [input, setInput] = useState({
         message: ''
@@ -30,7 +30,7 @@ export default function InputMessage() {
 
     function mandaInput (message){
         client.publish(topic,message);
-    }
+    };
 
     return (
         <ContainerInput>
@@ -42,5 +42,5 @@ export default function InputMessage() {
             />
             <ButtonInput onClick={()=> mandaInput(input)}>Enviar</ButtonInput>
         </ContainerInput>
-    )
-}
+    );
+};

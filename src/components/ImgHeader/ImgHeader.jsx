@@ -5,8 +5,8 @@ const ImgLogo = styled.img`
     width:150px;
 `
 
-export default function ImagemHeader() {
+export const ImagemHeader = ()=> {
     return(
         <ImgLogo src={ logo } alt="logo-do-barco" />
-    )
-}
+    );
+};

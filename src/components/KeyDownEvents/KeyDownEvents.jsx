@@ -1,6 +1,6 @@
 import { enviar } from "../ButtonsBox/ButtonsBox";
 
-export default function KeyDownEvents() {
+export const KeyDownEvents = ()=> {
     let farolAux = 0;
     const handleKeyDown = (e)=> {
         if(e.code == "KeyW") {
