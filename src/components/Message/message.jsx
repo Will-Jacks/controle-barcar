@@ -1,15 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 
 
-import { client } from '../Connector/connect';
+import { client } from '../Connector/Connector';
 
-export default function ExibeMsg() {
-    const [messages, setMessages] = React.useState([]);
+export default function Message() {
+    const [messages, setMessages] = useState([]);
 
     useEffect(() => {
         client.on('message', (topic, payload, packet) => {
-          setMessages(messages.concat(payload.toString()));
+          if(topic == "CARRINHO/barco") {
+            setMessages(messages.concat(payload.toString()));
+          }
         });
       }, []);
 

@@ -1,5 +1,4 @@
-import { enviar } from "../Send/send";
-import { topic } from "../Connector/connect";
+import { enviar } from "../ButtonsBox/ButtonsBox";
 
 export default function KeyDownEvents() {
     let farolAux = 0;
@@ -28,13 +27,13 @@ export default function KeyDownEvents() {
 
         if(farolAux == 0) {
             if(e.code == "KeyG") {
-                enviar("Liga led");
+                enviar("l");
             }
             farolAux += 1;
         }
         else if(farolAux >= 1) {
             if(e.code == "KeyG") {
-                enviar("Desliga led");
+                enviar("d");
             }
             farolAux = 0;
         }

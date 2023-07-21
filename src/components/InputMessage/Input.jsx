@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { ButtonsMQTT } from '../Buttons';
+import { ButtonsMQTT } from '../Buttons/Buttons';
 import { useState } from 'react';
-import { client } from '../Connector/connect';
-import { topic } from "../Connector/connect";
+import { client } from '../Connector/Connector';
+import { topic } from "../Connector/Connector";
 
 const InputMQTT = styled.input`
     width:300px;
@@ -30,7 +30,6 @@ export default function InputMessage() {
 
     function mandaInput (message){
         client.publish(topic,message);
-        console.log(valueInput)
     }
 
     return (

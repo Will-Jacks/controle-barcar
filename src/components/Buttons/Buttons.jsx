@@ -1,18 +1,23 @@
-import { useState } from "react";
-import { ButtonsMQTT } from "../Buttons";
-import { client } from '../Connector/connect';
-import { topic } from "../Connector/connect";
+import React, {useState}from 'react';
 import styled from "styled-components";
-const ButtonsContainer = styled.div`
-    margin-bottom:70px;
+import { enviar } from '../ButtonsBox/ButtonsBox';
+
+export const ButtonsMQTT = styled.button`
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    width:150px;
+    height:100px;
+    margin:10px;
 `
-export function enviar(message) {
-    client.publish(topic, message);
-}
 
-export function SendMQTT() {
-
-    
+export const Buttons = () => {
 
     const [ledStatus, setLedStatus] = useState('Liga led');
 
@@ -36,25 +41,24 @@ export function SendMQTT() {
         let novoStatus, mensagem;
         if (ledStatus === 'Liga led') {
           novoStatus = 'Desliga led';
-          mensagem = 'Liga led';
+          mensagem = 'l';
         } else {
           novoStatus = 'Liga led';
-          mensagem = 'Desliga led';
+          mensagem = 'd';
         }
         setLedStatus(novoStatus);
         enviar(mensagem);
       };
 
-
-    return(
-        <ButtonsContainer>
+    return (
+        <div>
             <ButtonsMQTT
                 onMouseDown={() => handleButtonPress('Cima')}
                 onMouseUp={() => handleButtonRelease('Parar')}
                 onTouchStart={() => handleTouchStart('Cima')}
                 onTouchEnd={() => handleTouchEnd('Parar')}
                 style={{ userSelect: 'none' }}
-                >
+            >
                 Frente
             </ButtonsMQTT>
 
@@ -68,7 +72,7 @@ export function SendMQTT() {
                     Esquerda
                 </ButtonsMQTT>
 
-                <ButtonsMQTT 
+                <ButtonsMQTT
                     onMouseDown={() => handleButtonPress('Direita')}
                     onMouseUp={() => handleButtonRelease('Parar')}
                     onTouchStart={() => handleTouchStart('Direita')}
@@ -88,12 +92,11 @@ export function SendMQTT() {
             </ButtonsMQTT>
 
             <div>
-            <ButtonsMQTT onClick={()=> enviar('Parar')}>Parar</ButtonsMQTT>
-            <ButtonsMQTT onClick={handleClickLed}>{ledStatus}</ButtonsMQTT>
+                <ButtonsMQTT onClick={() => enviar('Parar')}>Parar</ButtonsMQTT>
+                <ButtonsMQTT onClick={handleClickLed}>{ledStatus}</ButtonsMQTT>
             </div>
             <ButtonsMQTT onClick={() => enviar("255")}>Rápido</ButtonsMQTT>
             <ButtonsMQTT onClick={() => enviar("150")}>Lento</ButtonsMQTT>
-        </ButtonsContainer>
+        </div>
     )
 }
-
