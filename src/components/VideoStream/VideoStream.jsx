@@ -4,7 +4,7 @@ class VideoStream extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      streamUrl: 'https://c15a-179-211-160-197.ngrok-free.app/', // Substitua pelo IP real do ESP32-CAM
+      streamUrl: 'https://ed65-179-211-160-197.ngrok-free.app/', // Substitua pelo IP real do ESP32-CAM
     };
   }
 
