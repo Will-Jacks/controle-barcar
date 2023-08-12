@@ -7,6 +7,7 @@ import { KeyDownEvents } from './components/KeyDownEvents/KeyDownEvents.jsx';
 import { MessageArrived } from './components/MessagesArrived/MessageArrived.jsx';
 import { Buttons } from './components/Buttons/Buttons.jsx';
 import { StatusBox } from './components/StatusBox/StatusBox.jsx';
+import VideoStream from './components/VideoStream/VideoStream';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <ImagemHeader/>
     <Connector/>
     <MessageArrived/>
+    <VideoStream/>
     <Buttons/>
     <InputMessage/>
     <StatusBox/>
