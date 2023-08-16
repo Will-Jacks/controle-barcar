@@ -15,9 +15,9 @@ function App() {
     <div className="App">
     <ImagemHeader/>
     <Connector/>
-    <MessageArrived/>
     <VideoStream/>
     <Buttons/>
+    <MessageArrived/>
     <InputMessage/>
     <StatusBox/>
     <KeyDownEvents/>
