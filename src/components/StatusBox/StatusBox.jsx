@@ -35,35 +35,6 @@ export const StatusBox = () => {
         
       }, []);
 
-      
-      
- /*  useEffect(() => {
-    const unsubscribeAndResubscribe = () => {
-      client.unsubscribe(statusTopic, (err) => {
-        if (err) {
-          console.error('Erro ao se desinscrever do tópico:', err);
-        } else {
-          console.log('Desinscrito do tópico');
-          client.subscribe(statusTopic, (err) => {
-            if (err) {
-              console.error('Erro ao se inscrever no tópico:', err);
-            } else {
-              console.log('Reinscrito no tópico');
-            }
-          });
-        }
-      });
-    };
-
-    const intervalId = setInterval(unsubscribeAndResubscribe, 5000);
-
-    return () => {
-      clearInterval(intervalId);
-      client.end(); // Lembre-se de encerrar a conexão com o cliente MQTT quando o componente é desmontado
-    };
-  }, []); */
-
-
     return(
         
         <div>
