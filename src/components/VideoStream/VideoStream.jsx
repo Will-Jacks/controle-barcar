@@ -1,6 +1,6 @@
 import React from 'react';
 const VideoStream = ()=> {
-     const streamUrl = 'https://9ec0-177-193-102-234.ngrok-free.app';
+     const streamUrl = 'http://10.0.0.138/';
      
     return (
       <div>
