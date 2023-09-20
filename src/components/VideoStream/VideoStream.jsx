@@ -1,16 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 const VideoStream = ()=> {
-     const streamUrl = 'http://10.0.0.138/';
+     const streamUrl = 'https://9cb8-177-193-102-234.ngrok-free.app/';
      
+     const Iframe = styled.iframe`
+        border:none;
+     `
     return (
       <div>
         <h2>Video Stream</h2>
-        <iframe 
+        <Iframe 
           src={streamUrl}
           alt="Video Stream"
-          width="320"
-          height="240"
-        ></iframe>
+          width="800"
+          height="600">
+          </Iframe>
       </div>
     );
 }
